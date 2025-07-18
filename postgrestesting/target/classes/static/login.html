@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - URL Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-black font-sans">
+
+<!-- Navbar -->
+<nav class="bg-blue-600 text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">URL Manager</h1>
+    <div>
+      <a href="/index.html" class="px-4 hover:underline">Home</a>
+      <a href="/register.html" class="px-4 hover:underline">Register</a>
+      <a href="/login.html" class="px-4 hover:underline">Login</a>
+      <a href="/urls.html" class="px-4 hover:underline hidden">URLs</a>
+      <a href="/profile.html" class="px-4 hover:underline hidden">Profile</a>
+      <button id="logoutBtn" class="px-4 hover:underline hidden">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ Centered Login Container -->
+<div class="flex justify-center items-center min-h-screen">
+  <div class="bg-black text-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <h2 class="text-3xl font-bold mb-6 text-center">Login</h2>
+    <form id="loginForm">
+      <div class="mb-4">
+        <label class="block">Email</label>
+        <input type="email" id="email" class="w-full p-2 border rounded text-black" required>
+      </div>
+      <div class="mb-4">
+        <label class="block">Password</label>
+        <input type="password" id="password" class="w-full p-2 border rounded text-black" required>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white p-2 rounded hover:bg-blue-700 w-full">Login</button>
+    </form>
+    <p id="loginMessage" class="mt-4 text-red-500 hidden text-center"></p>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

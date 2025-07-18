@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>URLs - URL Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="bg-black text-white font-sans">
+
+<!-- Navbar -->
+<nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">URL Manager</h1>
+        <div>
+            <a href="/index.html" class="px-4 hover:underline">Home</a>
+            <a href="/register.html" class="px-4 hover:underline hidden">Register</a>
+            <a href="/login.html" class="px-4 hover:underline hidden">Login</a>
+            <a href="/urls.html" class="px-4 hover:underline font-semibold underline">URLs</a>
+            <a href="/profile.html" class="px-4 hover:underline">Profile</a>
+            <button id="logoutBtn" class="px-4 hover:underline hidden">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Manage Your URLs</h2>
+
+    <!-- Add URL Button -->
+    <div class="mb-4">
+        <button id="showAddFormBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+            ➕ Add URL
+        </button>
+    </div>
+
+    <!-- Add URL Form -->
+    <div id="addUrlFormContainer" class="hidden bg-gray-900 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold mb-4">Add New URL</h3>
+        <form id="urlForm">
+            <div class="mb-4">
+                <label class="block text-white">URL Name</label>
+                <input type="text" id="url_name" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white">URL Category</label>
+                <input type="text" id="url_category" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white">URL Description</label>
+                <input type="text" id="url_description" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white">URL Link</label>
+                <input type="url" id="url_link" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="flex justify-between gap-4">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Submit URL</button>
+                <button type="button" id="cancelAddFormBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 w-full">Cancel</button>
+            </div>
+            <p id="urlMessage" class="text-sm mt-2 hidden"></p>
+        </form>
+    </div>
+
+    <!-- Edit URL Form -->
+    <div id="editUrlFormContainer" class="hidden bg-gray-800 p-6 mt-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold mb-4">Update URL</h3>
+        <form id="editUrlForm">
+            <input type="hidden" id="edit_url_id" />
+            <div class="mb-4">
+                <label class="block text-white">URL Name</label>
+                <input type="text" id="edit_url_name" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white">URL Category</label>
+                <input type="text" id="edit_url_category" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white">URL Description</label>
+                <input type="text" id="edit_url_description" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="mb-4">
+                <label class="block text-white">URL Link</label>
+                <input type="url" id="edit_url_link" class="w-full p-2 border rounded text-black bg-white" required />
+            </div>
+            <div class="flex justify-between gap-4">
+                <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 w-full">Update URL</button>
+                <button type="button" id="cancelEditFormBtn" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 w-full">Cancel</button>
+            </div>
+            <p id="editUrlMessage" class="text-sm mt-2 hidden"></p>
+        </form>
+    </div>
+
+    <!-- URL List -->
+    <div class="mt-8">
+        <h3 class="text-xl font-bold mb-4">Your URLs</h3>
+        <div id="urlList" class="space-y-4"></div>
+        <p id="urlListMessage" class="text-center mt-4 text-red-400 hidden">No URLs found.</p>
+    </div>
+</div>
+
+<!-- Link JavaScript file -->
+<script src="/js/app.js"></script>
+</body>
+</html>

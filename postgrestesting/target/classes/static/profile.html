@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Profile - URL Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="bg-black text-white font-sans">
+
+<!-- Navbar -->
+<nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">URL Manager</h1>
+        <div>
+            <a href="/index.html" class="px-4 hover:underline">Home</a>
+            <a href="/register.html" class="px-4 hover:underline hidden">Register</a>
+            <a href="/login.html" class="px-4 hover:underline hidden">Login</a>
+            <a href="/urls.html" class="px-4 hover:underline">URLs</a>
+            <a href="/profile.html" class="px-4 hover:underline font-semibold underline">Profile</a>
+            <button id="logoutBtn" class="px-4 hover:underline hidden">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Profile</h2>
+
+    <!-- Two-column layout -->
+    <div class="flex flex-col md:flex-row gap-6 mb-6">
+
+        <!-- Left: Update Form -->
+        <div id="updateFormContainer" class="bg-gray-900 text-white p-6 rounded-lg shadow-md w-full md:w-1/2 hidden">
+            <h3 class="text-xl font-bold mb-4">Update Profile</h3>
+            <form id="updateProfileForm" class="space-y-4">
+                <div>
+                    <label for="email" class="block font-semibold">Email</label>
+                    <input type="email" id="email" class="w-full p-2 border rounded text-black" required>
+                </div>
+                <div>
+                    <label for="password" class="block font-semibold">New Password (Optional)</label>
+                    <input type="password" id="password" class="w-full p-2 border rounded text-black">
+                </div>
+                <div>
+                    <label for="dob" class="block font-semibold">Date of Birth</label>
+                    <input type="date" id="dob" class="w-full p-2 border rounded text-black" required>
+                </div>
+                <div>
+                    <label for="profession" class="block font-semibold">Profession</label>
+                    <input type="text" id="profession" class="w-full p-2 border rounded text-black" required>
+                </div>
+                <div>
+                    <label for="mobile_number" class="block font-semibold">Mobile Number</label>
+                    <input type="text" id="mobile_number" class="w-full p-2 border rounded text-black" required>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit Update</button>
+                <p id="updateMessage" class="text-green-400 text-sm mt-2 hidden"></p>
+            </form>
+        </div>
+
+        <!-- Right: Profile Info -->
+        <div class="bg-gray-900 text-white p-6 rounded-lg shadow-md w-full md:w-1/2">
+            <div id="profileDetails" class="space-y-4"></div>
+            <p id="profileMessage" class="text-red-400 mt-2 hidden"></p>
+        </div>
+    </div>
+
+    <!-- Bottom Buttons -->
+    <div class="max-w-md mt-4 space-y-2">
+        <button id="updateBtn" class="bg-green-600 text-white p-2 rounded hover:bg-green-700 w-full">Update Profile</button>
+        <button id="deleteAccountBtn" class="bg-red-600 text-white p-2 rounded hover:bg-red-700 w-full">Delete Account</button>
+    </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

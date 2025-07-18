@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-black text-white font-sans">
+
+<!-- Navbar -->
+<nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">URL Manager</h1>
+        <div>
+            <a href="/index.html" class="px-4 hover:underline">Home</a>
+            <a href="/register.html" class="px-4 hover:underline">Register</a>
+            <a href="/login.html" class="px-4 hover:underline">Login</a>
+            <a href="/urls.html" class="px-4 hover:underline">URLs</a>
+            <a href="/profile.html" class="px-4 hover:underline">Profile</a>
+            <button id="logoutBtn" class="px-4 hover:underline hidden">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold mb-6">Welcome to URL Manager</h2>
+    <p class="text-lg">Manage your URLs efficiently. Register or log in to get started.</p>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
